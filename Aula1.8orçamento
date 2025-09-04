@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include  <stdlib.h>
+
+int main () {
+    int idade, npessoas, i;
+    char nome[50], email[60], tel[30];
+    float soma=0;
+    
+    printf("Digite seu Nome:");
+    gets(nome);
+    fflush(stdin);
+    
+    printf("Digite o Email:");
+    gets(email);
+    fflush(stdin);
+    
+    printf("Digite o seu telefone:");
+    gets(tel);
+    fflush(stdin);
+    
+    printf("Digite a Quantidade de pessoas que vão entrar no Plano:");
+    scanf("%i", &npessoas);
+    
+    for(i=0; i<npessoas; i++){
+        printf("Digite a idade da %i pessoas:", i+1);
+        scanf("%i",  &idade);
+        if(idade>=0  && idade<1) soma=soma+140;
+        if(idade>=1  && idade<8) soma=soma+180;
+        if(idade>=8  && idade<15)soma=soma+180;
+        if(idade>=15 && idade<35) soma=soma+240;
+        if(idade>=35 && idade<55) soma=soma+270;
+        if(idade>=55 && idade<80) soma=soma+370;
+        if(idade>=82) soma=soma+430;
+    }
+    
+    printf("\nNome do Contratante:%S", nome);
+    printf("\nEmail do Contratante:%S", email);
+    printf("\nTelefone do Contratante:%s", tel);
+    printf("\nQuantidade de Pessoas no Orcamento: %i", npessoas);
+    printf("\nValor final do Orcamento: R$ %.2f", soma);
+}
+    
+    
