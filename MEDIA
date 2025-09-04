@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <locale.h>
+
+#define phoraextra 100
+
+int main() {
+    setlocale(LC_ALL,"portuguese");
+    
+    //declaração das variaveis
+    float AV1, AV2, AV3;
+    float T1, T2, T3;
+    float P1, P2, P3;
+    float media;
+    int faltas;
+    
+    //entrada de dados
+    printf("digite a suas faltas:       ");
+    scanf("%i",&faltas);
+    printf("digite a nota do trabalho 1:");
+    scanf("%f",&T1);
+    printf("digite a nota da prova 1:   ");
+    scanf("%f",&P1);
+    AV1= (T1*0.2) + (P1*0.8);
+    
+    printf("digite a nota do trabalho 2:");
+    scanf("%f",&T2);
+    printf("digite a nota da prova 2:   ");
+    scanf("%f",&P2);
+    AV2= (T2*0.2) + (P2*0.8);
+    
+    printf("digite a nota do trabalho 3:");
+    scanf("%f",&T3);
+    printf("digite a nota da prova 3:   ");
+    scanf("%f",&P3);
+    AV3= (T3*0.2) + (P3*0.8);
+    
+    media= (AV1+AV2+AV3)/3;
+    printf("media: %.1f", media);
+    
+    if(media>=6 && faltas<25){
+        printf("\nAP");
+    }else{
+        if(media>=4 && faltas<25){   //já me garrante que a nota é menor que 6
+            printf("\nEX");
+        }else{
+            printf("\nRP");
+        }
+    }   
+
+//fim do codigo com }
+}
