@@ -1,0 +1,55 @@
+
+//faça enquanto o usuário não digitar o valor 8
+//Jogo de adivinhação
+//a cada laço perguntar para o usuário. 
+//Qual o número Oculto
+//caso seja digita o valor 8, o loop para é informando
+//na tela "Parabéns você encontrou o número oculto"
+//o usuário deveria informa a quantidade de tentativas deseja
+//0 - 10
+//o loop deve parar em duas sustações
+//1 o Valor indicado foi encontratro
+//2 quantidade de tentativas foi atingida
+//ta frio (quando o palpite digitado estiver em um distância de 20 ou superior)
+//ta morno (quando o palpite digitado estiver em um distância de 10 ou superior)
+//ta quente (quando o palpite digitado estiver em um distância de 5 ou superior)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+int main(){
+	srand(time(NULL));
+	setlocale(LC_ALL, "portuguese");
+	int palpite=0;
+	
+	int Noculto=(rand() % 50) + 1; //variação de valores de 0 a 10
+	int Ntentativas=0;
+	int controleTentativas=0;
+	int intervalo;
+	
+	printf("Qual a quantidade de tentavias 0 - 10: ");
+	scanf("%i", &Ntentativas);//2
+	
+	while(palpite!=Noculto && controleTentativas<Ntentativas){
+		printf("Qual o numero Oculto: ");
+		scanf("%i", &palpite);
+		controleTentativas++;
+		
+		intervalo = Noculto - palpite;
+		if(intervalo<0) intervalo=intervalo*-1; //apenas para deixar o valor positivo
+		
+		if(intervalo>=10) printf("\nTa frio\n");
+		if(intervalo<=10 && intervalo>5) printf("\nTa Morno\n");
+		if(intervalo<=5) printf("\nTa Quente\n");
+	}
+	
+	if(palpite==Noculto){		
+		printf("Noculto: %i", Noculto);
+		printf("\nParabéns você encontrou o número oculto");
+	}else{
+		printf("Noculto: %i", Noculto);
+		printf("\nInfelizmente você errou");		
+	}
+}
