@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int QTD, i;
+    printf("Qual a quantidade de armazenamento:\n");
+    scanf("%i",&QTD);
+    
+    int notas[QTD];
+    
+    for (i= 0; i < QTD ; i++){
+        printf("Digite um valor: ");
+        scanf("%i",&notas[i]);
+    }
+    for(i=0;i<QTD;i++){
+        printf("numero digitado: %i\n",notas[i]);
+    }
+}
