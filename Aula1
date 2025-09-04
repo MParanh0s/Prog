@@ -1,0 +1,8 @@
+#include <stdio.h>//biblioteca de imput-Output
+#include <locale.h>
+int main (){
+    setlocale(LC_ALL,"portuguese");
+    printf("meu primeiro codigo\n");//escrever na tela
+        printf("meu segundo codigo");//escrever na tela
+
+}
