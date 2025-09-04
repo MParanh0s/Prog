@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+    int Periodo;
+    int numero;
+    int hora;
+    char igrejaCulto;
+    
+    printf("Digite um número de 1 a 6: ");
+    scanf("%i", &numero);
+    fflush(stdin); //limpeza de buffer de teclado
+    switch(numero){
+        
+        //caso seja domingo, pergunrtar : ??
+        //tu irás na igreja/missa ?
+        // caso sim-> irá no periodo da manhã ou de noite ?
+        //caso não-> deveria ir :(
+        
+        case 1:{
+            printf("Domingo.\n"); 
+            
+            printf("Tu irás na igreja/culto ?");
+            scanf("  %c", &igrejaCulto); //S ou N
+            fflush(stdin);
+            
+            if(igrejaCulto=='S'|| igrejaCulto=='s'){
+                printf("voce ira em qual Periodo 1-Manha / 2- Noite:");
+                scanf("%d", &Periodo);
+                if(Periodo==1){
+                    printf("manhã 8h");
+                }else{
+                    printf ("Noite:19h");
+                }
+                
+                }else{
+            
+                printf("deveria ir:");
+                
+            }
+            
+             break;
+        }
+        
+       
+        
+        case 2: printf("Segunda-Feira"); break;
+        case 3: printf("Terça-Feira");break;
+        case 4: printf("Quata-Feira");break;
+        case 5: printf("Quinta-Feira");break;
+        
+        
+        case 6:{
+            printf("Sexta-Feira.\n");
+            
+            printf("Digite a hora atual: ");
+    scanf("%i", &hora);
+    if (hora > 18) {
+        printf("Bora pro Bar.\n");
+    } else {
+        printf("Volte a trabalhar.\n");
+        // caso hora acima de 18> Bora pro bar,
+        //caso hora menor que <18 Volte a trabalhar,
+            } break;
+        } 
+        case 7: printf("Sabado(vulgo feriado)");break;
+        default: printf("Numero Informado Errado, Tente novamente");
+    }
+}
