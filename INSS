@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+
+#define phoraextra 100
+
+int main() {
+    setlocale(LC_ALL,"portuguese");
+    
+    //declaração das variaveis
+    float htrabalhadas, hextra, vhora, sbruto, inss;
+    float fgts, sliquido;
+    
+    //escrita de dados
+    printf("informe o número de horas trabalhadas");
+    scanf("%s",&htrabalhadas);
+    printf("informe o número de horas extras");
+    scanf("%s",&hextra);
+    printf("informe o valor da hora");
+    scanf("%s",&vhora);
+    
+    sbruto= (htrabalhadas+ hextra*(1+(phoraextra/100)))* vhora;
+    inss= sbruto*(0.09);
+    fgts= sbruto*(0.08);
+    sliquido= sbruto-inss;
+    printf("o salário bruto é:", sbruto);
+    printf("o salário liquido é:", sliquido);
+    printf("o inss é:", inss);
+    printf("o fgts é:", fgts);
+}
+
