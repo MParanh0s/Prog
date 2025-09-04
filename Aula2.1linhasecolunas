@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+
+    int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int MAT[7][3];
+    int l,c;
+    
+    for(l=0; l<7; l++){
+        for(c=0; c<3; c++){
+            printf("Digite um Valor:");
+            scanf("%i",&MAT[l][c]);
+        }
+    }
+    for(l=0; l<7; l++){
+        for(c=0; c<3; c++){
+            printf("\nValor Digitado%i",MAT[l][c]);
+        }
+    }
+}
