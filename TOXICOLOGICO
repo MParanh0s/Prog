@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "portuguese");
+
+    // declaração das variáveis
+    char nome[20], tel[20];
+    int idade;
+    char categoria_da_habilitacao;
+    int Prova_pratica;
+    int Prova_teorica;
+    int prova_toxi;
+    printf("\nQual o nome do candidato(a): ");
+    fgets(nome, sizeof(nome), stdin);
+
+    printf("\nQual o telefone do candidato(a): ");
+    fgets(tel, sizeof(tel), stdin);
+
+    printf("\nQual a idade do candidato(a): ");
+    scanf("%i", &idade);
+    fflush(stdin);
+
+    if (idade < 18) {
+        printf("Você ainda não tem idade o suficiente.\n");
+    } else {
+        printf("Idade válida.\n");
+
+        printf("\nQual a sua Prova_teorica: ");
+        scanf("%i", &Prova_teorica);
+
+        printf("\nQual a sua Prova_pratica: ");
+        scanf("%i", &Prova_pratica);
+
+        while ((getchar()) != '\n'); // limpa o buffer antes de ler char
+
+        printf("\nQual a categoria da habilitação: ");
+        scanf("%c", &categoria_da_habilitacao);
+
+        if (categoria_da_habilitacao == 'A' || categoria_da_habilitacao == 'a') {
+            if (Prova_teorica >= 15 && Prova_pratica >= 35) {
+                printf("\nCandidato aprovado na categoria A!!");
+            } else {
+                printf("\nCandidato reprovado na categoria A.");
+            }
+        }
+
+        if (categoria_da_habilitacao == 'B' || categoria_da_habilitacao == 'b') {
+            if (Prova_teorica >= 25 && Prova_pratica >= 35) {
+                printf("\nCandidato aprovado na categoria B!!");
+            } else {
+                printf("\nCandidato reprovado na categoria B.");
+            }
+        }
+
+        if (categoria_da_habilitacao == 'C' || categoria_da_habilitacao == 'c') {
+            if (Prova_teorica >= 35 && Prova_pratica >= 55) {
+                printf("\nCandidato aprovado na categoria C!!");
+            } else {
+                printf("\nCandidato reprovado na categoria C.");
+            }
+        }
+
+        if (categoria_da_habilitacao == 'D' || categoria_da_habilitacao == 'd') {
+            if (Prova_teorica >= 80 && Prova_pratica >= 85) {
+                printf("\nCandidato aprovado na categoria D!!");
+            } else {
+                printf("\nCandidato reprovado na categoria D.");
+            }
+        }
+        
+        if (categoria_da_habilitacao == 'E' || categoria_da_habilitacao == 'e') {
+            printf("\ndigite o valor da prova_toxi:");
+            scanf("%i", &prova_toxi);
+            if (Prova_teorica >= 95 && Prova_pratica >= 150 && prova_toxi>350) {
+                printf("\nCandidato aprovado na categoria D!!");
+            } else {
+                printf("\nCandidato reprovado na categoria D.");
+            }
+        }
+    }
+
+    return 0;
+}
