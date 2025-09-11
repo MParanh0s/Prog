@@ -14,49 +14,61 @@ typedef struct dados
 
 int main()
 {
-    dados Alien;
-    printf("Digite o Nome da Alien: ");
+    int qtdAlien, i;
+    printf("calcular IMC de Quantos Aliens:\n");
+    scanf("%i", &qtdAlien);
+    fflush(stdin);
+    
+    dados Alien[qtdAlien];//veor de struct
 
-    gets(Alien.nome);
+    for(i=0; i<qtdAlien; i++);{
+    printf("Digite o Nome do Alien: ");
+    scanf("%s", &Alien[i].nome);
     fflush(stdin); //limpeza de buffer de teclado
 
-    printf("Digite a idade da Alien: ");
-    scanf("%i", &Alien.idade);
+    printf("Digite a idade do Alien: ");
+    scanf("%i", &Alien[i].idade);
 
-    printf("Digite sua altura: ");
-    scanf("%f", &Alien.altura);
+    printf("Digite sua altura do Alien: ");
+    scanf("%f", &Alien[i].altura);
 
-    printf("Digite seu peso: ");
-    scanf("%i", &Alien.peso);
+    printf("Digite o peso do Alien: ");
+    scanf("%i", &Alien[i].peso);
+
+
+    }
+    
 
     // processamento Cálculo de IMC
     // peso / altura²
 
     
     // calculo do IMC 
-    Alien.imc = Alien.peso / (Alien.altura * Alien.altura);
+    Alien[i].imc = Alien[i].peso / (Alien[i].altura * Alien[i].altura);
 
+    for(i=0; i<qtdAlien; i++);{
     // saída
-    printf("\nNome Digitado:%s",Alien.nome);
-    printf("\nIdade Digitado:%i",Alien.idade);
-    printf("\nAlura Digitado:%2.f", Alien.altura);
-    printf("\nPeso Digitado:%i", Alien.peso);    
-    printf("\nIMC da Pessoas : %f", Alien.imc);
+    printf("\nNome Digitado:%s",Alien[i].nome);
+    printf("\nIdade Digitado:%i",Alien[i].idade);
+    printf("\nAlura Digitado:%2.f", Alien[i].altura);
+    printf("\nPeso Digitado:%i", Alien[i].peso);    
+    printf("\nIMC da Pessoas : %f", Alien[i].imc);
     //qual a classificação da pessoas
 
-    if(Alien.imc>=40){
+    if(Alien[i].imc>=40){
         printf("Você está com obsidadede mórbida!!");
-    }else if(Alien.imc<=39){
+    }else if(Alien[i].imc<=39){
         printf("Você está com obsidadede moderada!!");
 
-    }else if (Alien.imc<=29){
+    }else if (Alien[i].imc<=29){
         printf("Você está com obsidadede leve!!");
 
-    }else if (Alien.imc<=25){
+    }else if (Alien[i].imc<=25){
         printf("Você está Normal!!");
 
     }else {
         printf("Você está Abaixo do peso!!");
     }
     return 0;
+ }
 }
