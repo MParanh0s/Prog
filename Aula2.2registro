@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+// Registros - Estrutura de Variável
+
+typedef struct dados
+{
+    char nome[30];
+    int idade, peso;
+    float altura, imc;
+} dados;
+
+int main()
+{
+    dados Alien;
+    printf("Digite o Nome da Alien: ");
+
+    gets(Alien.nome);
+    fflush(stdin); //limpeza de buffer de teclado
+
+    printf("Digite a idade da Alien: ");
+    scanf("%i", &Alien.idade);
+
+    printf("Digite sua altura: ");
+    scanf("%f", &Alien.altura);
+
+    printf("Digite seu peso: ");
+    scanf("%i", &Alien.peso);
+
+    // processamento Cálculo de IMC
+    // peso / altura²
+
+    
+    // calculo do IMC 
+    Alien.imc = Alien.peso / (Alien.altura * Alien.altura);
+
+    // saída
+    printf("\nNome Digitado:%s",Alien.nome);
+    printf("\nIdade Digitado:%i",Alien.idade);
+    printf("\nAlura Digitado:%2.f", Alien.altura);
+    printf("\nPeso Digitado:%i", Alien.peso);    
+    printf("\nIMC da Pessoas : %f", Alien.imc);
+    //qual a classificação da pessoas
+
+    if(Alien.imc>=40){
+        printf("Você está com obsidadede mórbida!!");
+    }else if(Alien.imc<=39){
+        printf("Você está com obsidadede moderada!!");
+
+    }else if (Alien.imc<=29){
+        printf("Você está com obsidadede leve!!");
+
+    }else if (Alien.imc<=25){
+        printf("Você está Normal!!");
+
+    }else {
+        printf("Você está Abaixo do peso!!");
+    }
+    return 0;
+}
